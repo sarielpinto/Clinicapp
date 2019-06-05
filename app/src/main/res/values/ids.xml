@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="sending_pasxs_reset_button" type="id" />
+    <item name="change_email_button" type="id" />
+    <item name="change_password_button" type="id" />
+    <item name="newPassword" type="id" />
+    <item name="old_email" type="id" />
+    <item name="new_email" type="id" />
+    <item name="remove_user_button" type="id" />
+    <item name="changeEmail" type="id" />
+    <item name="changePass" type="id" />
+    <item name="remove" type="id" />
+    <item name="sign_out" type="id" />
+    <item name="send" type="id" />
+</resources>
