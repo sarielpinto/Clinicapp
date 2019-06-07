@@ -28,4 +28,7 @@
     <string name="btn_sign_out">Desconectar</string>
     <string name="lbl_forgot_password">Se te olvido tu contraseña?</string>
     <string name="forgot_password_msg">Solo necesitamos su ID de correo electrónico registrada para enviarle las instrucciones para restablecer su contraseña.</string>
+    <string name="toolbar_title">Contacts</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Type name…</string>
 </resources>
