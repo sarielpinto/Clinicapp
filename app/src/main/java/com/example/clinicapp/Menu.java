@@ -12,12 +12,19 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
     }
-    public void citas(View view){
-        Intent intent=new Intent(getApplicationContext(),Citas.class);
+
+    public void citas(View view) {
+        Intent intent = new Intent(getApplicationContext(), Citas.class);
         startActivity(intent);
     }
-    public void Especilistas(View view){
-        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+
+    public void Especilistas(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void Ubicacion(View view) {
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
         startActivity(intent);
     }
 }
