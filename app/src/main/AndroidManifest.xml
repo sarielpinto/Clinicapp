@@ -12,9 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:theme="@style/NOActionbar"/>
-        <activity android:name=".Citas"  />
+        <activity android:name=".ErrorConexion"
+            android:theme="@style/NOActionbar"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/NOActionbar" />
+        <activity android:name=".Citas" />
         <activity android:name=".Menu" />
         <activity
             android:name=".splash"
