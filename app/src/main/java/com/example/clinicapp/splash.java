@@ -35,7 +35,7 @@ public class splash extends AppCompatActivity {
             new Handler().postDelayed(new Runnable(){
                 public void run(){
                     // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
-                    Intent intent = new Intent(splash.this, Signup.class);
+                    Intent intent = new Intent(splash.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 };
