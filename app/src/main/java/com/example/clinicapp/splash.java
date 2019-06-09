@@ -50,7 +50,7 @@ public class splash extends AppCompatActivity {
                     finish();
                 };
             }, DURACION_SPLASH);
-            Toast.makeText(getApplicationContext(),"Falta Internet",Toast.LENGTH_SHORT).show();
+
         }
 
         //Splash

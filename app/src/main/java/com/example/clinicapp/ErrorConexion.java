@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 public class ErrorConexion extends AppCompatActivity {
-    private final int DURACION_SPLASH = 3000;
+    private final int DURACION_SPLASH = 5000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
