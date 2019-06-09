@@ -1,13 +1,107 @@
 package com.example.clinicapp;
 
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoadingActivity extends AppCompatActivity {
+
+    private final int DURACION_SPLASH = 1500; // 3 segundos
+    String ID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        if(b!=null){
+            ID = (b.getString("ID"));
+        }
+
+
+
+
+        //Conexxion a internet
+        ConnectivityManager connectivityManager=(ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo=connectivityManager.getActiveNetworkInfo();
+
+
+
+        switch (ID) {
+            case "registerActivity":
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, RegisterActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+                //Splash
+                break;
+
+            case "Menu":
+
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+
+                break;
+
+        }
     }
 }

@@ -24,7 +24,15 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" >
+
+
+
+
+
+
+
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,13 +59,21 @@
         <activity
             android:name=".splash"
             android:theme="@style/NOActionbar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".Signup" />
+        <activity android:name=".Signup"></activity>
+        <activity android:name=".LoadingActivity">
+
+
+
+
+        </activity>
     </application>
 
 </manifest>

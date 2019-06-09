@@ -141,6 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                             showMessage("Cuenta creado");
                             //after we created user we need to update his profile picture and name
                             updateUserInfo(name,pickedImUri,mAuth.getCurrentUser());
+                            updateUI();
 
                         }
                         else
@@ -208,7 +209,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent (getApplicationContext(),Menu.class);
+        Intent homeActivity = new Intent (getApplicationContext(),LoadingActivity.class);
+        homeActivity.putExtra("ID", "Menu");
         startActivity(homeActivity);
         finish();
     }
@@ -252,7 +254,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == RESULT_OK && requestCode == REQUESCODE && data !=null)
