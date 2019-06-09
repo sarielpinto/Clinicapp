@@ -50,7 +50,7 @@ public class detalles extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detalles);
         final FloatingActionsMenu menubotones=(FloatingActionsMenu) findViewById(R.id.grupofab);
         final TextView nombre = (TextView) findViewById(R.id.detail_name);
         final TextView esp = (TextView) findViewById(R.id.detail_especialidad);
