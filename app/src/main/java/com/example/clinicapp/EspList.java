@@ -41,7 +41,7 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
     TextView nombre;
     // url to fetch contacts json
     private static String URL="";
-
+   private  String v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       String v=getIntent().getStringExtra("valor");
+       v=getIntent().getStringExtra("valor");
         switch (v){
             case "Otorrinolaringología":
                 URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
@@ -59,7 +59,7 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
                 URL="https://gist.githubusercontent.com/LuisYama/3d7a965cb2d520c028175f710e00445b/raw/40b29c7d817198c7c4a28fca8b6fb909baf6aa1a/pediatria.json";
                 break;
             case "Oftalmología":
-                URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
+                URL="https://gist.githubusercontent.com/sarielpinto/1dad838c2b2cb2438b49938acb65ff1a/raw/0bd177d80bfee1455826d0650ddd4be717095fa3/Oftalmolog%25C3%25ADa";
                 break;
             case "Radiología":
                 URL="https://gist.githubusercontent.com/LuisYama/1626e49263ac1aec56148735b430cb4f/raw/6b2f6675c8bdfad45b3df79c8a37c649b86d4206/radiologia.json";
@@ -68,10 +68,10 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
                 URL="https://gist.githubusercontent.com/LuisYama/88869828d047c3ac92a3195abd1ebaee/raw/4aa894d4e24cb0cc5426f4486d9bc01beca48301/cardiologia.json";
                 break;
             case "Psiquiatría":
-                URL="https://gist.githubusercontent.com/LuisYama/3d7a965cb2d520c028175f710e00445b/raw/40b29c7d817198c7c4a28fca8b6fb909baf6aa1a/pediatria.json";
+                URL="https://gist.githubusercontent.com/sarielpinto/e5ab9dd289ed18307288bf48ed2ad6e5/raw/524fe4dec132d013d0fc924b5fecc90dc60f439f/Psiquiatr%25C3%25ADa";
                 break;
             case "Médico General":
-                URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
+                URL="https://gist.githubusercontent.com/sarielpinto/fde469ece9de8cea491373753019ff47/raw/9252b681c281c1484adc2fd04640c79dc803afd5/M%25C3%25A9dico%2520General";
                 break;
 
         }
