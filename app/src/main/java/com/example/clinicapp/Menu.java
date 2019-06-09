@@ -30,4 +30,8 @@ public class Menu extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
         startActivity(intent);
     }
+    public void missitas(View view){
+        Intent intent = new Intent(getApplicationContext(), Citas.class);
+        startActivity(intent);
+    }
 }
