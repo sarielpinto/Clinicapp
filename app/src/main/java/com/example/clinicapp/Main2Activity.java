@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,12 +19,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.clinicapp.especialistas.Contact2;
+import com.example.clinicapp.especialistas.ContactsAdapter2;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -31,33 +34,31 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener {
+public class Main2Activity extends AppCompatActivity implements ContactsAdapter2.ContactsAdapterListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
-    private List<Contact> contactList;
-    private ContactsAdapter mAdapter;
+    private List<Contact2> contactList;
+    private ContactsAdapter2 mAdapter;
     private SearchView searchView;
-    JsonArrayRequest request;
-    TextView nombre;
+
     // url to fetch contacts json
-    private static final String URL = "https://gist.githubusercontent.com/LuisYama/d16f9daa29c2b8c576123ad59f91513c/raw/8bacedfd47cba080798795213b18b94dfb79717a/especialistas.json";
+    private static final String URL = "https://gist.githubusercontent.com/LuisYama/e132cebf6c43115a49e3f5071af2b6cc/raw/3246db0fa035209929ffc6015c5ec23a8fb5f099/simple.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.toolbar_title);
-        toolbar.setBackgroundColor(Color.parseColor("#7FD3FA"));
         toolbar.setTitleTextColor(Color.BLACK);
 
         recyclerView = findViewById(R.id.recycler_view);
         contactList = new ArrayList<>();
-        mAdapter = new ContactsAdapter(this, contactList, this);
+        mAdapter = new ContactsAdapter2(this, contactList, this);
 
         // white background notification bar
         whiteNotificationBar(recyclerView);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
 
 
     private void fetchContacts() {
-       request = new JsonArrayRequest(URL,
+        JsonArrayRequest request = new JsonArrayRequest(URL,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
                             return;
                         }
 
-                        List<Contact> items = new Gson().fromJson(response.toString(), new TypeToken<List<Contact>>() {
+                        List<Contact2> items = new Gson().fromJson(response.toString(), new TypeToken<List<Contact2>>() {
                         }.getType());
 
                         // adding contacts to contacts list
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
             }
         });
 
-             MyApplication.getInstance().addToRequestQueue(request);
+        MyApplication.getInstance().addToRequestQueue(request);
     }
 
     @Override
@@ -170,7 +171,9 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     }
 
     @Override
-    public void onContactSelected(Contact contact) {
-
+    public void onContactSelected(Contact2 contact) {
+        Intent intent= new Intent(Main2Activity.this,EspList.class);
+        intent.putExtra("valor",contact.getEspecialidad());
+        startActivity(intent);
     }
 }
