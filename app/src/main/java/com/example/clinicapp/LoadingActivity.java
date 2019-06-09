@@ -78,7 +78,7 @@ public class LoadingActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         public void run() {
                             // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
-                            Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
+                            Intent intent = new Intent(LoadingActivity.this, Menu.class);
                             startActivity(intent);
                             finish();
                         }
@@ -102,6 +102,125 @@ public class LoadingActivity extends AppCompatActivity {
 
                 break;
 
+
+            case "Citas":
+
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, Main2Activity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+                break;
+
+            case "Especialistas":
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+                break;
+
+            case "Ubicación":
+
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, MapsActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+                break;
+
+            case "Missitas":
+
+
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, Citas.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                    }, DURACION_SPLASH);
+                } else {
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
+                            Intent intent = new Intent(LoadingActivity.this, ErrorConexion.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+                        ;
+                    }, DURACION_SPLASH);
+
+                }
+
+                break;
         }
     }
 }

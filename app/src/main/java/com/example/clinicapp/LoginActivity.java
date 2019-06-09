@@ -106,9 +106,12 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUI() {
 
 
-        startActivity(HomeActivity);
+        /*startActivity(HomeActivity);
+        finish();*/
+        Intent homeActivity = new Intent (getApplicationContext(),LoadingActivity.class);
+        homeActivity.putExtra("ID", "Menu");
+        startActivity(homeActivity);
         finish();
-
 
     }
 
