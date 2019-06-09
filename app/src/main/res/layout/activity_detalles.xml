@@ -1,0 +1,178 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="850dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Manuel Francisco Lasheras"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.322" />
+
+            <TextView
+                android:id="@+id/detail_price"
+                android:layout_width="119dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="8dp"
+                android:text="ESPECIALIDAD"
+                android:textColor="?colorPrimary"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.399" />
+
+            <TextView
+                android:id="@+id/detail_especialidad"
+                android:layout_width="97dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Cardiología"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.475" />
+
+
+            <TextView
+                android:id="@+id/tag_description"
+                android:layout_width="99dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="256dp"
+                android:paddingTop="16dp"
+                android:text="BIOGRAFÍA"
+                android:textColor="?colorPrimary"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/grupofab"
+                android:layout_width="9dp"
+                android:layout_height="288dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="340dp"
+                android:layout_marginEnd="8dp"
+                app:fab_addButtonColorNormal="@color/colorPrimary"
+                app:fab_addButtonColorPressed="@color/colorPrimaryDark"
+                app:fab_labelStyle="@style/etiqueta"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <com.getbase.floatingactionbutton.AddFloatingActionButton
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fab_colorNormal="?attr/colorAccent"
+                    app:fab_icon="@drawable/baseline_email_black_18dp"
+                    app:fab_size="normal" />
+
+                <com.getbase.floatingactionbutton.AddFloatingActionButton
+                    android:id="@+id/llamar"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:fab_colorNormal="?attr/colorAccent"
+                    app:fab_colorPressed="@color/colorPrimaryDark"
+                    app:fab_icon="@drawable/baseline_call_black_18dp"
+                    app:fab_size="normal"
+
+                    />
+
+
+            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+            <TextView
+                android:id="@+id/detail_description"
+                android:layout_width="278dp"
+                android:layout_height="147dp"
+                android:layout_marginTop="364dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="descripcion"
+                android:textAlignment="textStart"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.038"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <!-- App Bar -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <!-- Toolbar -->
+        <!-- Imagen del detalle -->
+        <ImageView
+            android:id="@+id/detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transitionName="shared_image"
+            app:srcCompat="@drawable/doctor" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- FAB -->
+</RelativeLayout>
