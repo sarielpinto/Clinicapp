@@ -2,6 +2,7 @@ package com.example.clinicapp;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -171,6 +172,8 @@ public class Main2Activity extends AppCompatActivity implements ContactsAdapter2
 
     @Override
     public void onContactSelected(Contact2 contact) {
-        Toast.makeText(getApplicationContext(), "Selected: " + contact.getEspecialidad(), Toast.LENGTH_LONG).show();
+        Intent intent= new Intent(Main2Activity.this,EspList.class);
+        intent.putExtra("valor",contact.getEspecialidad());
+        startActivity(intent);
     }
 }

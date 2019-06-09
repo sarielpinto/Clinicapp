@@ -31,7 +31,7 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener {
+public class EspList extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
     private List<Contact> contactList;
@@ -40,14 +40,41 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     JsonArrayRequest request;
     TextView nombre;
     // url to fetch contacts json
-    private static final String URL = "https://gist.githubusercontent.com/LuisYama/d16f9daa29c2b8c576123ad59f91513c/raw/8bacedfd47cba080798795213b18b94dfb79717a/especialistas.json";
+    private static String URL="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_esp_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+       String v=getIntent().getStringExtra("valor");
+        switch (v){
+            case "Otorrinolaringología":
+                URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
+                break;
+            case "Pediatría":
+                URL="https://gist.githubusercontent.com/LuisYama/3d7a965cb2d520c028175f710e00445b/raw/40b29c7d817198c7c4a28fca8b6fb909baf6aa1a/pediatria.json";
+                break;
+            case "Oftalmología":
+                URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
+                break;
+            case "Radiología":
+                URL="https://gist.githubusercontent.com/LuisYama/1626e49263ac1aec56148735b430cb4f/raw/6b2f6675c8bdfad45b3df79c8a37c649b86d4206/radiologia.json";
+                break;
+            case "Cardiología":
+                URL="https://gist.githubusercontent.com/LuisYama/88869828d047c3ac92a3195abd1ebaee/raw/4aa894d4e24cb0cc5426f4486d9bc01beca48301/cardiologia.json";
+                break;
+            case "Psiquiatría":
+                URL="https://gist.githubusercontent.com/LuisYama/3d7a965cb2d520c028175f710e00445b/raw/40b29c7d817198c7c4a28fca8b6fb909baf6aa1a/pediatria.json";
+                break;
+            case "Médico General":
+                URL="https://gist.githubusercontent.com/LuisYama/f6ae6e885eaeabd5cb472818c773d28a/raw/5c10690bb2ee1da6cc367f513ef6f6a3d334a0b0/otorrino.json";
+                break;
+
+        }
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -73,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
 
 
     private void fetchContacts() {
-       request = new JsonArrayRequest(URL,
+        request = new JsonArrayRequest(URL,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -101,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
             }
         });
 
-             MyApplication.getInstance().addToRequestQueue(request);
+        MyApplication.getInstance().addToRequestQueue(request);
     }
 
     @Override
