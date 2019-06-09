@@ -1,8 +1,10 @@
 package com.example.clinicapp;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 
 public class Menu extends AppCompatActivity {
@@ -14,9 +16,10 @@ public class Menu extends AppCompatActivity {
     }
 
     public void citas(View view) {
-        Intent intent = new Intent(getApplicationContext(), Citas.class);
+        Intent intent= new Intent(Menu.this,Main2Activity.class);
         startActivity(intent);
     }
+
 
     public void Especilistas(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
