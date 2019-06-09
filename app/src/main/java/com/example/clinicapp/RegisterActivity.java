@@ -3,6 +3,7 @@ package com.example.clinicapp;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -29,6 +30,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import static com.example.clinicapp.R.drawable.userphoto;
+
 public class RegisterActivity extends AppCompatActivity {
     ImageView ImgUserPhoto;
     static int PReqCode = 1;
@@ -38,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText userEmail,userPassword,userPassword2,userName;
     private ProgressBar loadingProgress;
     private Button regBtn,btnRegister;
+   private String Uri="@drawable/userphoto.png";
 
     private FirebaseAuth mAuth;
 
@@ -136,10 +140,11 @@ public class RegisterActivity extends AppCompatActivity {
                             ///user account created succefully
                             showMessage("Cuenta creado");
                             //after we created user we need to update his profile picture and name
-                            updateUserInfo(name , pickedImUri,mAuth.getCurrentUser());
+                            updateUserInfo(name,pickedImUri,mAuth.getCurrentUser());
 
                         }
                         else
+
                         {
                             //account creation failed
                             showMessage("fallo la creación de la cuenta"+task.getException().getMessage());
@@ -203,7 +208,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent (getApplicationContext(),LoginActivity.class);
+        Intent homeActivity = new Intent (getApplicationContext(),Menu.class);
         startActivity(homeActivity);
         finish();
     }
@@ -258,5 +263,6 @@ public class RegisterActivity extends AppCompatActivity {
             pickedImUri = data.getData();
             ImgUserPhoto.setImageURI(pickedImUri);
         }
+
     }
 }
