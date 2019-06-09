@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class LoadingActivity extends AppCompatActivity {
 
-    private final int DURACION_SPLASH = 1000; // 3 segundos
+    private final int DURACION_SPLASH = 1500; // 3 segundos
     String ID;
 
 
