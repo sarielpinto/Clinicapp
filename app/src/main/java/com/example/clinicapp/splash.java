@@ -40,7 +40,6 @@ public class splash extends AppCompatActivity {
                     finish();
                 };
             }, DURACION_SPLASH);
-            Toast.makeText(getApplicationContext(),"Conectado",Toast.LENGTH_SHORT).show();
         }else{
             new Handler().postDelayed(new Runnable(){
                 public void run(){

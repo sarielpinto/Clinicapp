@@ -198,6 +198,9 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
 
     @Override
     public void onContactSelected(Contact contact) {
-
+        Intent intent= new Intent(EspList.this,Citas.class);
+        intent.putExtra("especialista",v);
+        intent.putExtra("nombre",contact.getName());
+        startActivity(intent);
     }
 }

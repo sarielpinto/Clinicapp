@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -16,13 +17,19 @@ public class Citas extends AppCompatActivity {
     ArrayList<String> myArrayList = new  ArrayList<>();
     ListView myListerView;
     Firebase myFarebase;
-
+    String e,n;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
         Firebase.setAndroidContext(this);
-        myFarebase = new Firebase("https://clinicapp-f77a3.firebaseio.com/");
+
+        e=getIntent().getStringExtra("especialista");
+        n=getIntent().getStringExtra("nombre");
+
+        Toast.makeText(getApplicationContext(),"se paso "+e+" "+n,Toast.LENGTH_LONG).show();
+
+        myFarebase = new Firebase("https://clinicapp-f77a3.firebaseio.com/1/dia");
 
         final ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,myArrayList);
 
