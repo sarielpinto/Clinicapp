@@ -6,12 +6,8 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.clinicapp.Mostrar_solo_los_nombre.Lista;
 
 public class LoadingActivity extends AppCompatActivity {
 
@@ -199,7 +195,7 @@ public class LoadingActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         public void run() {
                             // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
-                            Intent intent = new Intent(LoadingActivity.this, Citas.class);
+                            Intent intent = new Intent(LoadingActivity.this, Lista.class);
                             startActivity(intent);
                             finish();
                         }
