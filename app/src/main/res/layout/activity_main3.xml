@@ -116,8 +116,8 @@
                     android:layout_height="15dp"
                     app:fab_colorNormal="?attr/colorAccent"
                     app:fab_colorPressed="@color/colorPrimaryDark"
-                    app:fab_icon="@drawable/baseline_call_black_18dp"
                     app:fab_size="normal"
+                    app:srcCompat="@android:drawable/ic_menu_call"
 
                     />
 
@@ -126,8 +126,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:fab_colorNormal="?attr/colorAccent"
-                    app:fab_icon="@drawable/baseline_email_black_18dp"
-                    app:fab_size="normal" />
+
+                    app:fab_size="normal"
+                    app:srcCompat="@android:drawable/ic_dialog_email"/>
 
 
             </com.getbase.floatingactionbutton.FloatingActionsMenu>
@@ -145,10 +146,10 @@
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.038"
+                app:layout_constraintHorizontal_bias="0.04"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.415" />
 
 
         </android.support.constraint.ConstraintLayout>

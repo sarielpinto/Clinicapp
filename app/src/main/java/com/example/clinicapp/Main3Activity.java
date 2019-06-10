@@ -50,6 +50,7 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
         Intent intent= getIntent();
         Bundle b=intent.getExtras();
         if(b!=null){

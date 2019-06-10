@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.toolbar_title);
