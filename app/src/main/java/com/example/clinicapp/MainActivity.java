@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     JsonArrayRequest request;
     TextView nombre;
     // url to fetch contacts json
-    private static final String URL = "https://gist.githubusercontent.com/LuisYama/d16f9daa29c2b8c576123ad59f91513c/raw/8bacedfd47cba080798795213b18b94dfb79717a/especialistas.json";
+    private static final String URL = "https://gist.githubusercontent.com/LuisYama/d16f9daa29c2b8c576123ad59f91513c/raw/f8ddf53438697b0fe79531878281626dbc0547ce/especialistas.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

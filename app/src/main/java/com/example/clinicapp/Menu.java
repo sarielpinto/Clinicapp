@@ -32,8 +32,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void Ubicacion(View view) {
-        /*Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        startActivity(intent);
 
 
         Intent MenuActivity = new Intent (getApplicationContext(),LoadingActivity.class);
