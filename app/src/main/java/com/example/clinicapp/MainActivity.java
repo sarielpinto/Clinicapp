@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.toolbar_title);
@@ -175,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     @Override
     public void onContactSelected(Contact contact) {
         Intent i= new Intent(MainActivity.this, Main3Activity.class);
+        i.putExtra("ID",contact.getName());
         startActivity(i);
 
     }

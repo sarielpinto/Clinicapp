@@ -1,12 +1,10 @@
 package com.example.clinicapp;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Explode;
 import android.view.View;
-
+import com.example.clinicapp.Mostrar_solo_los_nombre.Lista;
 public class Menu extends AppCompatActivity {
 
     @Override
@@ -34,8 +32,8 @@ public class Menu extends AppCompatActivity {
     }
 
     public void Ubicacion(View view) {
-        /*Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        startActivity(intent);
 
 
         Intent MenuActivity = new Intent (getApplicationContext(),LoadingActivity.class);
@@ -43,11 +41,6 @@ public class Menu extends AppCompatActivity {
         startActivity(MenuActivity);
     }
     public void missitas(View view){
-        /*Intent intent = new Intent(getApplicationContext(), Citas.class);
-        startActivity(intent);*/
-
-
-
         Intent MenuActivity = new Intent (getApplicationContext(),LoadingActivity.class);
         MenuActivity.putExtra("ID", "Missitas");
         startActivity(MenuActivity);
