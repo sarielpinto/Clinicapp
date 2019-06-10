@@ -57,7 +57,7 @@ public class Main3Activity extends AppCompatActivity {
             ID=(b.getString("ID"));
         }
 
-        final FloatingActionsMenu menubotones=(FloatingActionsMenu) findViewById(R.id.grupofab);
+        final FloatingActionsMenu menubotones=(FloatingActionsMenu) findViewById(R.id.fabmenu);
         final TextView nombre = (TextView) findViewById(R.id.detail_name);
         final TextView esp = (TextView) findViewById(R.id.detail_especialidad);
         final TextView des = (TextView) findViewById(R.id.detail_description);
@@ -121,8 +121,8 @@ public class Main3Activity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Error cargando la imagen: " + e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
-        FloatingActionButton fab2=findViewById(R.id.email);
-        final FloatingActionsMenu chido=findViewById(R.id.grupofab);
+        FloatingActionButton fab2=findViewById(R.id.correo);
+        final FloatingActionsMenu chido=findViewById(R.id.fabmenu);
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,7 +135,7 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-        FloatingActionButton fab = findViewById(R.id.llamar);
+        FloatingActionButton fab = findViewById(R.id.telefono);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
