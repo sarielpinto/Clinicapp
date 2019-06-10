@@ -162,7 +162,7 @@ public class LoadingActivity extends AppCompatActivity {
 
                 break;
 
-            case "Ubicación":
+            case "Ubicacion":
 
 
                 if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
