@@ -38,6 +38,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.airbnb.android:lottie:2.1.0'
     implementation 'com.getbase:floatingactionbutton:1.10.1'
-    implementation files('gson-2.3.1.jar')
+
 }
 apply plugin: 'com.google.gms.google-services'
