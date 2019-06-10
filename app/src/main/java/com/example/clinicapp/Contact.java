@@ -5,6 +5,11 @@ public class Contact {
     String image;
     String phone;
     String especialidad;
+
+
+
+    String descripcion;
+    String correo;
     String logo;
 
     public Contact() {
@@ -28,5 +33,12 @@ public class Contact {
 
     public String getLogo() {
         return logo;
+    }
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public String getCorreo() {
+        return correo;
     }
 }
