@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     @Override
     public void onContactSelected(Contact contact) {
         Intent i= new Intent(MainActivity.this, Main3Activity.class);
+        i.putExtra("ID",contact.getName());
         startActivity(i);
 
     }
