@@ -30,7 +30,7 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.example.clinicapp.Mostrar_solo_los_nombre.Lista;
 public class EspList extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
@@ -198,7 +198,7 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
 
     @Override
     public void onContactSelected(Contact contact) {
-        Intent intent= new Intent(EspList.this,Citas.class);
+        Intent intent= new Intent(EspList.this,Lista.class);
         intent.putExtra("especialista",v);
         intent.putExtra("nombre",contact.getName());
         startActivity(intent);

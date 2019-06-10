@@ -20,7 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main3Activity"></activity>
+        <activity android:name=".Mostrar_solo_los_nombre.Lista"></activity>
+        <activity android:name=".pruebadefirebase.fire" />
+        <activity android:name=".Main3Activity" />
         <activity android:name=".EspList" />
         <activity
             android:name=".Main2Activity"
