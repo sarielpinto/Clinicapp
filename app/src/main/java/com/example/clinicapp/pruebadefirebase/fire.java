@@ -34,14 +34,15 @@ public class fire extends AppCompatActivity {
     Button buttonAdd;
     public ProgressBar myProgressBar;
     DatabaseReference databaseReference;
+    String e,n,es;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire);
-
         databaseReference= FirebaseDatabase.getInstance().getReference();
         // creating layout
         creatingLayouts();
+        e=getIntent().getStringExtra("Hola");
 
     }
     public void creatingLayouts(){
@@ -87,7 +88,7 @@ public class fire extends AppCompatActivity {
 
         databaseReference.child("users").push().setValue(user);
 
-        editTextName.setText(null);
+        editTextName.setText(e);
         editTextCountry.setText(null);
         editTextWeight.setText(null);
 
@@ -136,7 +137,7 @@ public class fire extends AppCompatActivity {
         myProgressBar.setVisibility(View.GONE);
         textViewEmptyView.setVisibility(View.GONE);
         recyclerListView.setVisibility(View.VISIBLE);
-        editTextName.setText(null);
+        editTextName.setText(e);
         editTextCountry.setText(null);
         myAdapter.setData(ls);
         myAdapter.notifyDataSetChanged();

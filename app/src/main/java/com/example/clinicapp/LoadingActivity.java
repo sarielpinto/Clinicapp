@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.clinicapp.Mostrar_solo_los_nombre.Lista;
+import com.example.clinicapp.pruebadefirebase.fire;
 
 public class LoadingActivity extends AppCompatActivity {
 
@@ -195,7 +196,7 @@ public class LoadingActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         public void run() {
                             // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
-                            Intent intent = new Intent(LoadingActivity.this, Lista.class);
+                            Intent intent = new Intent(LoadingActivity.this, fire.class);
                             startActivity(intent);
                             finish();
                         }

@@ -1,6 +1,7 @@
 package com.example.clinicapp.Mostrar_solo_los_nombre;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,15 +9,19 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.clinicapp.Contact.*;
 import com.example.clinicapp.R;
+import com.example.clinicapp.especialistas.Contact2;
+import com.example.clinicapp.pruebadefirebase.fire;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.example.clinicapp.Contact;
 public class UserAdapter2 extends RecyclerView.Adapter<UserAdapter2.MyViewHolder> {
-
+Contact2 contact2;
+Contact contact;
     private final Context mContext;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     private List<User2> userList = new ArrayList<>();
@@ -45,6 +50,11 @@ public class UserAdapter2 extends RecyclerView.Adapter<UserAdapter2.MyViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(mContext, fire.class);
+                intent.putExtra("Hola",userList.get(position).toString());
+                //intent.putExtra("valor",contact2.getEspecialidad());
+                //intent.putExtra("valor2",contact.getName());
+                mContext.startActivity(intent);
                 Toast.makeText(mContext, " " + userList.get(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });

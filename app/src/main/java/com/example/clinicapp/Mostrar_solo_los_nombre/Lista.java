@@ -1,5 +1,6 @@
 package com.example.clinicapp.Mostrar_solo_los_nombre;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,7 +32,8 @@ public class Lista extends AppCompatActivity {
 
     public ProgressBar myProgressBar;
     DatabaseReference databaseReference;
-
+    String e,n;
+    String nombre;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +42,38 @@ public class Lista extends AppCompatActivity {
         databaseReference= FirebaseDatabase.getInstance().getReference();
         // creating layout
         creatingLayouts();
-    }
-    public void creatingLayouts(){
-        myProgressBar=(ProgressBar) findViewById(R.id.loader);
+        e=getIntent().getStringExtra("especialista");
+        Intent intent=getIntent();
+        Bundle b=intent.getExtras();
+        if(b!=null){
+            nombre=(b.getString("nombre"));
+        }
+        if(nombre.equals("Manuel Francisco Lasheras")) {
+            updateAdapter();
+        }else if(nombre.equals("Angel Landa Bermejo")){
+            updateAdapter2();
+        }else if(nombre.equals("Montserrat Romero Pardo")){
+            updateAdapter3();
+        }else if(nombre.equals("Sonia Montalvo Rabadan")){
+            updateAdapter4();
+    }else if(nombre.equals("Juan José Guardiola Cardona")){
+        updateAdapter5();}
+        else if(nombre.equals("Eva Falcon Vazquez")){
+            updateAdapter6();}}
+
+
+
+
+    public void creatingLayouts() {
+        myProgressBar = (ProgressBar) findViewById(R.id.loader);
         textViewEmptyView = (TextView) findViewById(R.id.tvEmptyView);
 
-        recyclerListView=(RecyclerView) findViewById(R.id.recylerview_list);
+        recyclerListView = (RecyclerView) findViewById(R.id.recylerview_list);
         recyclerListView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter= new UserAdapter2(this);
-        updateAdapter();
+        myAdapter = new UserAdapter2(this);
+
+
+
         recyclerListView.setAdapter(myAdapter);
     }
 
@@ -77,19 +102,18 @@ public class Lista extends AppCompatActivity {
 
 
     // adding new user to end  the user using on firebase database
-    public void updateDatabase(User2 user){
+    public void updateDatabase(User2 user) {
 
-        databaseReference.child("users").push().setValue(user);
+        databaseReference.child(e).push().setValue(user);
 
         updateAdapter();
 
     }
-
     //update adapter
     public void updateAdapter(){
 
         final List<User2> listUsers= new ArrayList<>();
-        databaseReference.child("users").addChildEventListener(new ChildEventListener() {
+        databaseReference.child("Manuel Francisco Lasheras").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 listUsers.add(dataSnapshot.getValue(User2.class));
@@ -119,6 +143,174 @@ public class Lista extends AppCompatActivity {
 
 
     }
+
+    public void updateAdapter2(){
+
+        final List<User2> listUsers= new ArrayList<>();
+        databaseReference.child("Angel Landa Bermejo").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                listUsers.add(dataSnapshot.getValue(User2.class));
+                displayUsers(listUsers);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    public void updateAdapter3(){
+
+        final List<User2> listUsers= new ArrayList<>();
+        databaseReference.child("Montserrat Romero Pardo").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                listUsers.add(dataSnapshot.getValue(User2.class));
+                displayUsers(listUsers);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+    public void updateAdapter4(){
+
+        final List<User2> listUsers= new ArrayList<>();
+        databaseReference.child("Sonia Montalvo Rabadan").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                listUsers.add(dataSnapshot.getValue(User2.class));
+                displayUsers(listUsers);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+    public void updateAdapter5(){
+
+        final List<User2> listUsers= new ArrayList<>();
+        databaseReference.child("Juan José Guardiola Cardona").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                listUsers.add(dataSnapshot.getValue(User2.class));
+                displayUsers(listUsers);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+    public void updateAdapter6(){
+
+        final List<User2> listUsers= new ArrayList<>();
+        databaseReference.child("Eva Falcon Vazquez").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                listUsers.add(dataSnapshot.getValue(User2.class));
+                displayUsers(listUsers);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(),"Canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
 
 
     //display the user on Adapter
