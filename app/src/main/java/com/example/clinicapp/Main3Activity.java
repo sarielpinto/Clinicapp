@@ -74,7 +74,7 @@ public class Main3Activity extends AppCompatActivity {
 
                     try {
                         JSONObject jsono = new JSONObject(status.getResult());
-                        JSONArray jsonArray = jsono.getJSONArray("Manuel Francisco Lasheras");
+                        JSONArray jsonArray = jsono.getJSONArray(ID);
                         ArrayList<Contact> personas = new ArrayList<Contact>();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             String person = jsonArray.getString(i);
