@@ -3,6 +3,7 @@ package com.example.clinicapp;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.PeriodicSync;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,7 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener {
+public class MainActivity extends AppCompatActivity implements ContactsAdapter.ContactsAdapterListener  {
     private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
     private List<Contact> contactList;
@@ -169,8 +170,15 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
         }
     }
 
+
+
     @Override
     public void onContactSelected(Contact contact) {
+        Intent i= new Intent(MainActivity.this, Main3Activity.class);
+        startActivity(i);
 
     }
+
+
+
 }
