@@ -1,4 +1,5 @@
 package com.example.clinicapp;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -6,19 +7,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
-
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.devazt.networking.HttpClient;
 import com.devazt.networking.OnHttpRequestComplete;
@@ -36,8 +35,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class detalles extends AppCompatActivity {
-
+public class Main3Activity extends AppCompatActivity {
     private ImageView imageView;
     private Bitmap LoadImage;
     private EditText PHONE;
@@ -46,16 +44,24 @@ public class detalles extends AppCompatActivity {
     private final int phonecode = 100;
     public String phoneNumber="9831069810";
     private String correo="chidez";
+    String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main3);
+        Intent intent= getIntent();
+        Bundle b=intent.getExtras();
+        if(b!=null){
+            ID=(b.getString("ID"));
+        }
+
         final FloatingActionsMenu menubotones=(FloatingActionsMenu) findViewById(R.id.grupofab);
         final TextView nombre = (TextView) findViewById(R.id.detail_name);
         final TextView esp = (TextView) findViewById(R.id.detail_especialidad);
         final TextView des = (TextView) findViewById(R.id.detail_description);
         imageView = (ImageView) findViewById(R.id.detail_image);
+
         HttpClient client = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
@@ -68,12 +74,12 @@ public class detalles extends AppCompatActivity {
 
                     try {
                         JSONObject jsono = new JSONObject(status.getResult());
-                        JSONArray jsonArray = jsono.getJSONArray("crack5");
-                        ArrayList<Person> personas = new ArrayList<Person>();
+                        JSONArray jsonArray = jsono.getJSONArray("Manuel Francisco Lasheras");
+                        ArrayList<Contact> personas = new ArrayList<Contact>();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             String person = jsonArray.getString(i);
 
-                            Person p = gson.fromJson(person, Person.class);
+                            Contact p = gson.fromJson(person, Contact.class);
                             personas.add(p);
                             TextView t = new TextView(getBaseContext());
                             nombre.setText(p.getName());
@@ -81,7 +87,7 @@ public class detalles extends AppCompatActivity {
                             des.setText(p.getDescripcion()  );
                             String imageHttpAddress = p.getImage();
                             downloadFile(imageHttpAddress);
-                            phoneNumber=p.getTelefono();
+                            phoneNumber=p.getPhone();
                             correo=p.getCorreo();
 
 
@@ -101,7 +107,7 @@ public class detalles extends AppCompatActivity {
 
             }
         });
-        client.excecute("https://gist.githubusercontent.com/reneantoniopalomo/d34d8d5b648101478d7e78ea2ed7098b/raw/458ce378eb7f266bd196e5470ad4f82cb01616a2/recio.json");
+        client.excecute("https://gist.githubusercontent.com/reneantoniopalomo/bc08c2012e0115ffc899f1f4bef2a78f/raw/9c9b1b2bffddcd2f00e032cd663a95d798af3021/tio.json");
     }void downloadFile(String imageHttpAddress) {
         URL imageUrl = null;
         try {
@@ -139,7 +145,7 @@ public class detalles extends AppCompatActivity {
                         if(CheckPermission(Manifest.permission.CALL_PHONE)){
                             //Ha aceptado
                             Intent i=new Intent(Intent.ACTION_CALL, Uri.parse("tel: "+phoneNumber));
-                            if(ActivityCompat.checkSelfPermission(detalles.this, Manifest.permission.CALL_PHONE)!=PackageManager.PERMISSION_GRANTED)return;
+                            if(ActivityCompat.checkSelfPermission(Main3Activity.this, Manifest.permission.CALL_PHONE)!=PackageManager.PERMISSION_GRANTED)return;
                             startActivity(i);
                         }else{
                             if(!shouldShowRequestPermissionRationale(Manifest.permission.CALL_PHONE)){
@@ -150,7 +156,7 @@ public class detalles extends AppCompatActivity {
 
                             }else{
                                 //Ha denegado
-                                Toast.makeText(detalles.this, "Please, enable the request permisssion",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Main3Activity.this, "Please, enable the request permisssion",Toast.LENGTH_SHORT).show();
                                 Intent i= new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                                 i.addCategory(Intent.CATEGORY_DEFAULT);
                                 i.setData(Uri.parse("package:"+ getPackageName()));
@@ -179,7 +185,7 @@ public class detalles extends AppCompatActivity {
                 if (CheckPermission(Manifest.permission.CALL_PHONE)) {
                     startActivity(intentCall);
                 } else {
-                    Toast.makeText(detalles.this, "You declined the access", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "You declined the access", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -213,7 +219,7 @@ public class detalles extends AppCompatActivity {
                         startActivity(intentCall);
                     }else{
                         //No concedió su permiso
-                        Toast.makeText(detalles.this, "You declined the access",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main3Activity.this, "You declined the access",Toast.LENGTH_SHORT).show();
                     }
                 }
                 break;
