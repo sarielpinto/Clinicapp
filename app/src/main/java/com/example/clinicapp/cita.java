@@ -26,61 +26,6 @@ public class cita extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cita);
-        te_1=findViewById(R.id.t_1);
-        te_2=findViewById(R.id.t_2);
-
-
-    }
-    public void onClick (View view){
-        Intent miIntent = null;
-        switch (view.getId()) {
-            case R.id.b_1:
-                final Calendar c = Calendar.getInstance();
-                dia = c.get(Calendar.DAY_OF_MONTH);
-                mes = c.get(Calendar.MONTH);
-                ano = c.get(Calendar.YEAR);
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        //te_1.setText(year+"/"+"0"+(monthOfYear+1)+"/"+dayOfMonth);
-                        if (monthOfYear < 10) {
-
-                            month = "0" + monthOfYear;
-                        } else if (monthOfYear >= 10) {
-                            month = "" + monthOfYear;
-                        }
-                        if (dayOfMonth < 10) {
-
-                            day = "0" + dayOfMonth;
-                        } else if (dayOfMonth >= 10) {
-                            day = "" + dayOfMonth;
-                        }
-                        te_1.setText(year + "/" + month + "/" + day);
-                    }
-                }
-                        , ano, mes, dia);
-                datePickerDialog.show();
-                break;
-            case R.id.b_2:
-                final Calendar x = Calendar.getInstance();
-                hora = x.get(Calendar.HOUR_OF_DAY);
-                minutos = x.get(Calendar.MINUTE);
-
-                TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        te_2.setText(hourOfDay + ":" + minute);
-                        mas = (hourOfDay + ":" + (minute + 15));
-                    }
-                }, hora, minutos, false);
-                timePickerDialog.show();
-
-
-        }
-        if (miIntent != null) {
-            startActivity(miIntent);
-        }
 
     }
 }
