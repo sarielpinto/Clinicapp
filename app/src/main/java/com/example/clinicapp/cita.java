@@ -25,7 +25,7 @@ public class cita extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cita);
         te_1=findViewById(R.id.t_1);
         te_2=findViewById(R.id.t_2);
 

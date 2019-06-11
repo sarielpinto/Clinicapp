@@ -24,6 +24,11 @@ import java.util.List;
 
 public class fire extends AppCompatActivity {
     public static  final String TAG="FIREBASE";
+    TextView te_1,te_2;
+    private  int dia,mes,ano,hora,minutos;
+    String month;
+    String day;
+    String mas;
 
     public RecyclerView recyclerListView;
     public  UserAdapter myAdapter;
