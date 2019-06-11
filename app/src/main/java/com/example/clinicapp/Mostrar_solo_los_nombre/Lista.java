@@ -34,6 +34,7 @@ public class Lista extends AppCompatActivity {
     DatabaseReference databaseReference;
     String e,n;
     String nombre;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -310,7 +311,10 @@ public class Lista extends AppCompatActivity {
 
 
     }
-
+public void pasar_datos(String nombre,String especialista){
+        nombre=n;
+        especialista=e;
+}
 
 
     //display the user on Adapter
