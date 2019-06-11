@@ -53,7 +53,7 @@ public class Main2Activity extends AppCompatActivity implements ContactsAdapter2
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        getSupportActionBar().setTitle("Especialidades");
         toolbar.setTitleTextColor(Color.BLACK);
 
         recyclerView = findViewById(R.id.recycler_view);
