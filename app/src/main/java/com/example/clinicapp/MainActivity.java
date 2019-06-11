@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        getSupportActionBar().setTitle("Especialistas");
         toolbar.setBackgroundColor(Color.parseColor("#7FD3FA"));
         toolbar.setTitleTextColor(Color.BLACK);
 

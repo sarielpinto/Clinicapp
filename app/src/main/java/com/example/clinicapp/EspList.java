@@ -23,6 +23,8 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.clinicapp.Mostrar_solo_los_nombre.UserAdapter2;
+import com.example.clinicapp.pruebadefirebase.fire;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -42,6 +44,8 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
     // url to fetch contacts json
     private static String URL="";
    private  String v;
+   private UserAdapter2 userAdapter2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,8 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
         setContentView(R.layout.activity_esp_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
        v=getIntent().getStringExtra("valor");
         switch (v){
@@ -76,9 +82,10 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
 
         }
 
+
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        getSupportActionBar().setTitle(v);
         toolbar.setBackgroundColor(Color.parseColor("#7FD3FA"));
         toolbar.setTitleTextColor(Color.BLACK);
 
@@ -196,9 +203,10 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
         }
     }
 
+
     @Override
     public void onContactSelected(Contact contact) {
-        Intent intent= new Intent(EspList.this,Lista.class);
+        Intent intent= new Intent(EspList.this,fire.class);
         intent.putExtra("especialista",v);
         intent.putExtra("nombre",contact.getName());
         startActivity(intent);

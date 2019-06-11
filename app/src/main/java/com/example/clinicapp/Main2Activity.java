@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
@@ -53,7 +54,7 @@ public class Main2Activity extends AppCompatActivity implements ContactsAdapter2
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        getSupportActionBar().setTitle("Especialidades");
         toolbar.setTitleTextColor(Color.BLACK);
 
         recyclerView = findViewById(R.id.recycler_view);
@@ -172,6 +173,8 @@ public class Main2Activity extends AppCompatActivity implements ContactsAdapter2
 
     @Override
     public void onContactSelected(Contact2 contact) {
+
+        Toast.makeText(Main2Activity.this, " " + contact.getEspecialidad(), Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(Main2Activity.this,EspList.class);
         intent.putExtra("valor",contact.getEspecialidad());
         startActivity(intent);
