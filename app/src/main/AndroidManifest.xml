@@ -48,11 +48,12 @@
         <activity android:name=".Mostrar_solo_los_nombre.Lista" />
         <activity android:name=".pruebadefirebase.fire" />
         <activity android:name=".Main3Activity" />
-        <activity android:name=".EspList" />
+        <activity android:name=".EspList" android:parentActivityName=".Main2Activity" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".Menu"/>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity
@@ -60,7 +61,8 @@
             android:theme="@style/NOActionbar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/NOActionbar" />
+            android:theme="@style/NOActionbar"
+            android:parentActivityName=".Menu"/>
         <activity android:name=".Citas" />
         <activity android:name=".Menu" />
         <activity
