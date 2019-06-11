@@ -43,6 +43,8 @@ public class fire extends AppCompatActivity {
         // creating layout
         creatingLayouts();
         e=getIntent().getStringExtra("Hola");
+        es=getIntent().getStringExtra("especialista");
+        n=getIntent().getStringExtra("nombre");
 
     }
     public void creatingLayouts(){
@@ -88,9 +90,9 @@ public class fire extends AppCompatActivity {
 
         databaseReference.child("users").push().setValue(user);
 
-        editTextName.setText(e);
-        editTextCountry.setText(null);
-        editTextWeight.setText(null);
+        editTextName.setText(null);
+        editTextCountry.setText(n);
+        editTextWeight.setText(es);
 
         updateAdapter();
 
@@ -137,8 +139,9 @@ public class fire extends AppCompatActivity {
         myProgressBar.setVisibility(View.GONE);
         textViewEmptyView.setVisibility(View.GONE);
         recyclerListView.setVisibility(View.VISIBLE);
-        editTextName.setText(e);
-        editTextCountry.setText(null);
+        editTextName.setText(null);
+        editTextCountry.setText(n);
+        editTextWeight.setText(es);
         myAdapter.setData(ls);
         myAdapter.notifyDataSetChanged();
     }

@@ -45,9 +45,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".Mostrar_solo_los_nombre.Lista" />
-        <activity android:name=".pruebadefirebase.fire"
-            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".Mostrar_solo_los_nombre.Lista" android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".pruebadefirebase.fire" />
         <activity android:name=".Main3Activity" />
         <activity android:name=".EspList" android:parentActivityName=".Main2Activity"/>
         <activity

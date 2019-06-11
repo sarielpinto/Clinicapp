@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.CitasAdapter;
 import com.example.clinicapp.Contact.*;
 import com.example.clinicapp.R;
 import com.example.clinicapp.especialistas.Contact2;
@@ -20,6 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.clinicapp.Contact;
 public class UserAdapter2 extends RecyclerView.Adapter<UserAdapter2.MyViewHolder> {
+    CitasAdapter name;
+    CitasAdapter esp;
+String item;
 Contact2 contact2;
 Contact contact;
     private final Context mContext;
@@ -28,6 +32,7 @@ Contact contact;
 
     public UserAdapter2(Context context) {
         mContext = context;
+
     }
 
     public void setData(List<User2> users) {
@@ -39,7 +44,11 @@ Contact contact;
     @Override
     public UserAdapter2.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_list_item2, parent, false);
-        //Toast.makeText(mContext,"hola"+contact.getEspecialidad(),Toast.LENGTH_LONG).show();
+
+
+
+
+
         return new MyViewHolder(v);
 
     }
@@ -52,13 +61,14 @@ Contact contact;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(mContext, fire.class);
+                /*Intent intent=new Intent(mContext, Lista.class);
                 intent.putExtra("Hola",userList.get(position).toString());
-                //intent.putExtra("valor",contact2.getEspecialidad());
+                //intent.putExtra("valor",contact.getEspecialidad());
                 //intent.putExtra("valor2",contact.getName());
-                mContext.startActivity(intent);
-                Toast.makeText(mContext, " " + userList.get(position).toString(), Toast.LENGTH_SHORT).show();
+                mContext.startActivity(intent);*/
 
+
+                Toast.makeText(mContext, " " + userList.get(position).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
