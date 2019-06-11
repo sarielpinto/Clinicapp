@@ -57,12 +57,13 @@
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:gravity="center"
-                android:onClick="missitas">
+                android:onClick="missitas"
+                android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="64dp"
@@ -76,11 +77,12 @@
                     android:layout_marginTop="10dp"
                     android:text="Mis Citas"
                     android:textStyle="bold" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/lightgray"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:background="@color/lightgray" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

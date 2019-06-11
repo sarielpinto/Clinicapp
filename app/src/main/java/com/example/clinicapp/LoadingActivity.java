@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.clinicapp.A_ultima_Hora.fire2;
 import com.example.clinicapp.Mostrar_solo_los_nombre.Lista;
 import com.example.clinicapp.pruebadefirebase.fire;
 
