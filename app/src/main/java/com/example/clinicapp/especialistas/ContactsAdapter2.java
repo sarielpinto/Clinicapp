@@ -105,7 +105,6 @@ public class ContactsAdapter2  extends RecyclerView.Adapter<ContactsAdapter2.MyV
                 filterResults.values = contactListFiltered;
                 return filterResults;
             }
-
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 contactListFiltered = (ArrayList<Contact2>) filterResults.values;
