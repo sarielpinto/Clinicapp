@@ -39,7 +39,9 @@ Contact contact;
     @Override
     public UserAdapter2.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_list_item2, parent, false);
+        //Toast.makeText(mContext,"hola"+contact.getEspecialidad(),Toast.LENGTH_LONG).show();
         return new MyViewHolder(v);
+
     }
 
     @Override
@@ -56,6 +58,7 @@ Contact contact;
                 //intent.putExtra("valor2",contact.getName());
                 mContext.startActivity(intent);
                 Toast.makeText(mContext, " " + userList.get(position).toString(), Toast.LENGTH_SHORT).show();
+
             }
         });
 
