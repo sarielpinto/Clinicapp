@@ -52,7 +52,7 @@ Contact contact;
             public void onClick(View view) {
                 Intent intent=new Intent(mContext, fire.class);
                 intent.putExtra("Hola",userList.get(position).toString());
-                //intent.putExtra("valor",contact2.getEspecialidad());
+                //intent.putExtra("valor",contact.getEspecialidad());
                 //intent.putExtra("valor2",contact.getName());
                 mContext.startActivity(intent);
                 Toast.makeText(mContext, " " + userList.get(position).toString(), Toast.LENGTH_SHORT).show();
