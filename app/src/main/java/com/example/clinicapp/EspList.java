@@ -78,7 +78,7 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
 
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        getSupportActionBar().setTitle(v);
         toolbar.setBackgroundColor(Color.parseColor("#7FD3FA"));
         toolbar.setTitleTextColor(Color.BLACK);
 
