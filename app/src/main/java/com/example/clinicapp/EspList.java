@@ -210,12 +210,5 @@ public class EspList extends AppCompatActivity implements ContactsAdapter.Contac
         intent.putExtra("especialista",v);
         intent.putExtra("nombre",contact.getName());
         startActivity(intent);
-
-        Intent intent2= new Intent(EspList.this,Lista.class);
-        intent2.putExtra("especialista",v);
-        intent2.putExtra("nombre",contact.getName());
-        startActivity(intent2);
-
-
     }
 }
